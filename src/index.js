@@ -171,6 +171,9 @@ const getAuthorizationToken = async (
   }
 
   return fetch(url.toString(), {
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded',
+    },
     method: 'POST',
     body: JSON.stringify(form),
   }).then((res) => res.json());
@@ -202,6 +205,9 @@ const refreshAuthorizationToken = async (
   };
 
   return fetch(url.toString(), {
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded',
+    },
     method: 'POST',
     body: JSON.stringify(form),
   }).then((res) => res.json());
